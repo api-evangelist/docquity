@@ -1,0 +1,19 @@
+generated: '2026-08-12'
+method: searched
+source: https://docquity.com/
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  Docquity documents no rate limits, because it documents no API. There is no
+  developer portal, reference or terms-of-use section describing throttling. A
+  live probe of api.docquity.com returned no RateLimit-*, X-RateLimit-* or
+  Retry-After headers on an unauthenticated response, so there is no runtime
+  signal to record either. An honest zero, not an omission.
+evidence:
+  - url: https://api.docquity.com/v1/ping
+    status: 404
+    finding: no rate-limit headers present on the response
+  - url: https://docquity.com/termsandconditions
+    status: 200
+    finding: no API or rate-limit terms published

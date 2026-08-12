@@ -1,0 +1,46 @@
+generated: '2026-08-12'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: docquity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 16 15:22:41 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+  role: website
+- host: api.docquity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 16 15:22:41 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_preload: true
+  role: first-party application backend
+  note: not discovered from apis.yml (no public API entry); probed directly
+- host: app.docquity.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 28 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_preload: true
+  role: web application
+- host: id.docquity.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb  2 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_preload: false
+  role: identity service
+  note: >-
+    Returns 401 on every path including /.well-known/openid-configuration.
+    Negotiates TLS 1.2 where every other Docquity host negotiates TLS 1.3.
+domains:
+- domain: docquity.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

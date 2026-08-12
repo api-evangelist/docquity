@@ -1,0 +1,107 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of https://api.docquity.com and https://docquity.com
+scope: >-
+  Docquity publishes no developer documentation, so nothing here is a documented
+  provider convention. Every field below was OBSERVED on the wire against the
+  first-party application backend and is recorded as evidence of how that backend
+  behaves — not as a contract Docquity offers to third parties. No Idempotency
+  pointer is emitted in apis.yml because no idempotency contract was observed or
+  documented.
+documented: false
+surfaces:
+  - host: https://api.docquity.com
+    role: first-party mobile/web application backend
+    public: false
+    observed_status: 404 on every probed path, JSON body, no HTML
+  - host: https://id.docquity.com
+    role: identity service (referenced from the docquity.com CSP connect-src)
+    public: false
+    observed_status: 401 on every path including /.well-known/openid-configuration
+error_envelope:
+  format: proprietary JSON
+  media_type: application/json;charset=utf-8
+  observed_example: '{"status":0,"code":2000,"data":{},"msg":"","error":{"code":1020,"data":{},"msg":"Something went wrong"}}'
+  fields:
+    - name: status
+      note: integer success flag; 0 observed on failure
+    - name: code
+      note: envelope-level code; 2000 observed
+    - name: data
+      note: payload object, empty on failure
+    - name: msg
+      note: human message at the envelope level, empty on the observed failure
+    - name: error.code
+      note: application error code; 1020 observed for an unmatched route
+    - name: error.msg
+      note: human error message; "Something went wrong" observed
+  rfc9457: false
+  note: >-
+    Not RFC 9457 problem+json. The transport status (404) and the envelope's own
+    status/code fields are carried independently, which means a client must parse
+    the body rather than trust the HTTP status alone.
+authentication:
+  documented: false
+  style: custom headers (not observed in use; enumerated only from the CORS preflight allowlist)
+  observed_accepted_headers:
+    - Authorization
+    - userauthkey
+    - tokenid
+    - refreshtoken
+    - otptoken
+    - x-secret
+    - signature
+    - Client-Security-Token
+    - customid
+    - udid
+  note: >-
+    These names come from the Access-Control-Allow-Headers response header on
+    api.docquity.com. They indicate a bespoke, multi-header token scheme with OTP
+    and device binding rather than a standard OAuth 2.0 bearer profile. No scheme,
+    token format, grant flow or scope model is published anywhere, and
+    id.docquity.com refuses anonymous OIDC discovery with 401.
+cors:
+  allow_methods: [POST, GET, OPTIONS, DELETE, PUT]
+  allow_credentials: true
+  allow_origin: 'null (no wildcard; origin echoed per allowlist)'
+  max_age: 60000
+versioning:
+  documented: false
+  observed: none
+  note: >-
+    A `version`, `ver`, `appversion` and `releaseVersion` header set appears in the
+    CORS allowlist, implying client-version negotiation via request headers rather
+    than a URI or media-type version. Not documented.
+pagination:
+  documented: false
+  observed: none
+request_tracing:
+  header: x-request-id
+  documented: false
+  note: accepted in the CORS allowlist; not observed echoed on a response
+idempotency:
+  supported: unknown
+  documented: false
+  note: >-
+    No Idempotency-Key or equivalent header appears in the CORS allowlist and no
+    idempotency contract is documented. Deliberately NOT credited.
+rate_limit_signaling:
+  headers_observed: []
+  documented: false
+security_headers:
+  api_host:
+    strict_transport_security: max-age=31536000; includeSubDomains; preload
+    x_content_type_options: nosniff
+    x_frame_options: SAMEORIGIN
+    x_xss_protection: 1; mode=block
+    referrer_policy: strict-origin
+    cache_control: no-store, max-age=0
+  website:
+    strict_transport_security: max-age=63072000; includeSubDomains
+    content_security_policy: report-only
+    permissions_policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
+    referrer_policy: strict-origin-when-cross-origin
+cross_links:
+  - security/docquity-domain-security.yml
+  - rate-limits/docquity-rate-limits.yml
+  - well-known/docquity-well-known.yml

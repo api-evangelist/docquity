@@ -1,0 +1,23 @@
+generated: '2026-08-12'
+method: searched
+source: https://docquity.com/for-enterprise
+plan_count: 0
+currency: null
+plans: []
+note: >-
+  Docquity publishes no pricing or plans of any kind. docquity.com/pricing
+  returns 404. The Dx platform is free at the point of use for verified
+  healthcare professionals (invite/verification gated, not paywalled), and the
+  life-sciences side — Pulse and Dialog, marketed as the Intelligence Suite on
+  /for-enterprise — is sold through a "request a POC session" contact motion
+  with no published rate card, tier, quota or overage. There is no developer
+  plan because there is no public API.
+evidence:
+  - url: https://docquity.com/pricing
+    status: 404
+  - url: https://docquity.com/for-enterprise
+    status: 200
+    finding: enterprise POC request only; no tiers, prices or quotas published
+  - url: https://docquity.com/for-doctors
+    status: 200
+    finding: no consumer/professional pricing published

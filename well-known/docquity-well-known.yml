@@ -1,0 +1,96 @@
+generated: '2026-08-12'
+method: probed
+source: live /.well-known/ probes across every Docquity host
+note: >-
+  Every /.well-known/ path on Docquity's own web and API hosts (docquity.com,
+  api.docquity.com, app.docquity.com) returned 404. The single 200 is a
+  security.txt on integrityreporting.docquity.com, which runs the third-party
+  GlobaLeaks whistleblowing platform — its Policy and Contact point at the
+  GlobaLeaks project's own GitHub security advisories, NOT at a Docquity
+  vulnerability-disclosure program. It is recorded here as observed evidence
+  but is deliberately NOT credited as a Docquity SecurityTxt or WellKnown
+  surface, and no WellKnown / SecurityTxt / Security pointer is emitted in
+  apis.yml. Crediting a vendor default as a provider disclosure program would
+  be false attribution.
+hosts:
+  - host: https://docquity.com
+    kind: website
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://api.docquity.com
+    kind: application-backend
+    note: >-
+      Real host. Every path returns a uniform JSON error envelope with HTTP 404
+      (no HTML), which confirms an active API backend with no public discovery
+      surface.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://app.docquity.com
+    kind: web-application
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://integrityreporting.docquity.com
+    kind: third-party-saas
+    platform: GlobaLeaks whistleblowing software
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: docquity-integrityreporting-security.txt
+        first_party: false
+        note: >-
+          GlobaLeaks upstream default. Policy and Contact resolve to
+          github.com/globaleaks/globaleaks-whistleblowing-software, not to
+          Docquity. Expires 2027-08-12.
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://doctorjobs.today
+    kind: product-site
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+summary:
+  paths_probed: 34
+  first_party_hits: 0
+  third_party_hits: 1
+  agent_card_found: false

@@ -1,0 +1,3 @@
+Policy: https://github.com/globaleaks/globaleaks-whistleblowing-software/security/policy
+Contact: https://github.com/globaleaks/globaleaks-whistleblowing-software/security/advisories/new
+Expires: 2027-08-12T10:48:47.602567Z

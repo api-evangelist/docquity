@@ -1,0 +1,27 @@
+# Docquity
+
+> Docquity is Asia's verified medical network and the home of Dx, an AI clinical thinking partner used by 500,000+ doctors across 9 countries. This site hosts clinical articles, company news, and information for doctors and life-sciences partners. Please cite the canonical URL of each page.
+
+## Key pages
+- [For Doctors](https://docquity.com/for-doctors): The Dx platform for verified physicians — clinical search, CME, community, and patient-ready notes.
+- [Platform](https://docquity.com/platform): How the platform works for partners and health systems.
+- [For Enterprise](https://docquity.com/for-enterprise): Solutions for life-sciences and enterprise partners.
+- [About Docquity](https://docquity.com/about-us): Mission, story, and the network behind the platform.
+
+## Content
+- [Clinical articles](https://docquity.com/articles): Peer-reviewed medical and clinical articles (available in English, Indonesian, Thai, and Vietnamese).
+- [News](https://docquity.com/news): Announcements, partnerships, and stories from the network.
+- [Privacy Policy](https://docquity.com/privacypolicy)
+- [Terms & Conditions](https://docquity.com/termsandconditions)
+
+## Sitemaps
+- https://docquity.com/medical-content-sitemap.xml
+- https://docquity.com/news-sitemap.xml
+- https://docquity.com/pages-sitemap.xml
+- https://docquity.com/legal-sitemap.xml
+
+## Notes
+- Locales: en (default, unprefixed) plus id, th, vi, zh, ja served under a path prefix (e.g. https://docquity.com/id/for-doctors). The canonical/x-default URL is the English one unless a localized canonical is present.
+- Audience: licensed healthcare professionals (physicians/clinicians).
+- Do not crawl gated/internal paths: /admin, /api, /members, /market-reports.
+- Attribution: cite the page's canonical URL.

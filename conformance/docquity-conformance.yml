@@ -1,0 +1,65 @@
+generated: '2026-08-12'
+method: searched
+source: https://docquity.com/privacypolicy
+note: >-
+  Docquity operates no trust center, no security page and no certifications page
+  (trust.docquity.com and security.docquity.com do not resolve; /trust, /security
+  and /compliance all 404). The only compliance statements the company publishes
+  are prose claims inside its privacy policy. They are recorded here as claims
+  with their source, NOT as verified certifications, and no `Compliance` or
+  `TrustCenter` pointer is emitted in apis.yml — an unaudited prose claim is not a
+  published compliance program.
+standards:
+  - id: gdpr
+    conforms: claimed
+    evidence: >-
+      Privacy policy states Docquity will "comply with applicable personal data
+      protection and privacy laws, including Global Data Protection Regulations
+      (GDPR)".
+    source: https://docquity.com/privacypolicy
+    verified: false
+  - id: hipaa
+    conforms: claimed
+    evidence: >-
+      Privacy policy describes "access to HIPPA compliant chat platform" (sic).
+      Scoped to the chat feature, not asserted platform-wide. No BAA, audit report
+      or attestation is published.
+    source: https://docquity.com/privacypolicy
+    verified: false
+  - id: soc2
+    conforms: false
+    evidence: no SOC 2 claim or report found on any Docquity property
+  - id: iso-27001
+    conforms: false
+    evidence: >-
+      No ISO 27001 certificate is published. The supplier code of conduct PDF is
+      filed under an ISMS document-control prefix (gr-isms-doc-a05), which implies
+      an internal information-security management system, but no certification is
+      claimed or evidenced.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No OAuth 2.0 metadata is served. id.docquity.com returns 401 on
+      /.well-known/oauth-authorization-server; the API backend advertises a bespoke
+      multi-header token scheme (userauthkey / tokenid / refreshtoken / otptoken)
+      in its CORS allowlist.
+  - id: oidc
+    conforms: false
+    evidence: id.docquity.com/.well-known/openid-configuration returns 401
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      api.docquity.com returns a proprietary JSON error envelope
+      (status/code/data/msg/error) as application/json, not application/problem+json.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: >-
+      No first-party security.txt. The only 200 is the GlobaLeaks vendor default on
+      integrityreporting.docquity.com — see well-known/docquity-well-known.yml.
+governance:
+  ethics_reporting: https://integrityreporting.docquity.com/
+  anti_bribery_policy: https://s3.ap-southeast-1.amazonaws.com/docquity-website-prod/media/anti-bribery-and-anti-corruption-policy.pdf
+  supplier_code_of_conduct: https://s3.ap-southeast-1.amazonaws.com/docquity-website-prod/media/gr-isms-doc-a05-19-2-docquity-supplier-code-of-conduct-may-2026.pdf
+  quality_concern_reporting: https://docquity.com/quality-concern
+  data_protection_officer: dpo@docquity.com
+  legal_entity: DOCQUITY HOLDINGS PTE. LTD. (UEN 201703503D), Singapore
