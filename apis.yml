@@ -21,7 +21,7 @@ url: https://raw.githubusercontent.com/api-evangelist/docquity/refs/heads/main/a
 image: https://docquity.com/images/brand/og-default.png
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
