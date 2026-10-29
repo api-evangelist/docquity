@@ -64,5 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Docquity is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Docquity is a Singapore-headquartered digital health company operating Asia's largest verified professional network for licensed healthcare practitioners, with more than 500,000 verified doctors across nine markets including Indonesia, Malaysia, the Philippines, Thailand, Vietnam, Singapore and Taiwan. Its flagship product, Dx, is an AI clinical thinking partner that bundles clinical search and decision support, accredited continuing medical education, peer community and case discussion, and patient-ready summary notes into an invite-only mobile and web platform gated behind medical-credential verification. For life-sciences and enterprise partners Docquity sells an Intelligence Suite comprising Pulse, which measures healthcare-professional conviction and engagement, and Dialog, which runs field engagement and activation programs against that audience. Docquity also operates Docquity Jobs, a medical recruitment board. The company publishes no public API, developer portal or machine-readable specification; its api.docquity.com backend and id.docquity.com identity service exist to serve its own first-party applications and are not offered to third-party developers.
+
+**Areas:** Company · Healthcare · Digital Health · Medical Education · Healthcare Professionals · Professional Network · Life Sciences · Pharmaceuticals · Artificial Intelligence · Clinical Decision Support · Mobile · Southeast Asia
+
+## Docquity on APIs.io
+
+Everything profiled for Docquity is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/docquity/](https://apis.io/providers/docquity/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Docquity Domain Security](https://apis.io/security/docquity/docquity-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Docquity Plans Pricing](https://apis.io/plans/docquity/docquity-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Docquity Rate Limits](https://apis.io/rate-limits/docquity/docquity-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://docquity.com/)
+- [Support](https://docquity.com/contact-us)
+- [Blog](https://docquity.com/news)
+- [Terms of service](https://docquity.com/termsandconditions)
+- [Privacy policy](https://docquity.com/privacypolicy)
+- [GitHub](https://github.com/Docquity)
+
+## API Evangelist rating
+
+**Kin Score 13.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 27.6 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.0** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/docquity/](https://apis.io/providers/docquity/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Docquity: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/docquity/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
